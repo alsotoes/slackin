@@ -1,8 +1,10 @@
 #!/usr/bin/env node
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
 
 var pkg = require('./../package')
 var args = require('args')
 var slackin = require('./../dist').default
+
 
 args
   .option(['p', 'port'], 'Port to listen on [$PORT or 3000]', require('hostenv').PORT || process.env.PORT || 3000)
